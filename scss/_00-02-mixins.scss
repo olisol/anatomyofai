@@ -1,0 +1,99 @@
+// MIXINS
+
+/* FONT */
+
+@mixin font-mix ($color, $font-family, $font-size, $line-height, $font-weight, $text-transform) {
+color: $color;
+font-family: $font-family;  
+font-size: $font-size;
+line-height: $line-height;
+font-weight: $font-weight;
+text-transform: $text-transform;
+}
+
+/* 
+@include font-mix (
+$color,
+$font-family, 
+$font-size, 
+$line-height, 
+$font-weight, 
+$text-transform );
+
+@include font-mix ($gray-darker, $body-font, 15px, 1, 500, none); 
+@include font-mix ($gray-darker, $body-font, 15px, 1, 500, uppercase); 
+*/
+
+
+
+/* TRANSITION */
+
+@mixin transition ($object, $sec, $type) {
+-webkit-transition: $object $sec $type;
+-moz-transition: $object $sec $type;
+-o-transition: $object $sec $type;
+transition: $object $sec $type;
+}
+
+/*
+@include transition ($object, $sec, $type);
+@include transition (all, 0.3s, linear);
+*/
+
+
+/* BOX SHADOW */
+
+@mixin box-shadow ($horizontal-length, $vertical-length, $blur, $spread, $rgba-color-and-opacity) {
+-webkit-box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+    -moz-box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+    box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+}
+
+/*
+
+@include box-shadow (5px, 5px, 5px, 0px, rgba(51,51,51,0.15));
+
+-webkit-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
+    box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
+
+*/
+
+
+/* ROTATE */
+
+@mixin rotate ($deg) {
+  -webkit-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+/*
+@include rotate ($deg);
+@include rotate (all);
+*/
+
+
+
+/* BACKGROUND IMAGE */
+
+@mixin bg-image ($background-repeat, $background-position-horizontal, $background-position-vertical, $background-size) {
+background-repeat: $background-repeat;
+background-position: $background-position-horizontal $background-position-vertical;
+-webkit-background-size: $background-size;
+   -moz-background-size: $background-size;
+    -ms-background-size: $background-size;
+     -o-background-size: $background-size;
+        background-size: $background-size;
+}
+
+/*
+@include bg-image (
+$background-repeat, 
+$background-position-horizontal, $background-position-vertical, 
+$background-size);
+
+@include bg-image (no-repeat, center, top, auto);
+@include bg-image (no-repeat, center, center, cover);
+@include bg-image (no-repeat, center, bottom, contain);
+*/
